@@ -1,6 +1,7 @@
 import { Request, Response } from 'express';
 import { container } from 'tsyringe';
 import UpdateUserAvatarService from '@modules/users/services/UpdateUserAvatarService';
+import { classToClass } from 'class-transformer';
 
 export default class UserAvatarController {
     public async update(
@@ -17,8 +18,6 @@ export default class UserAvatarController {
             avatarFilename: file,
         });
 
-        // delete userAvatar.password;
-
-        return response.json(userAvatar);
+        return response.json(classToClass(userAvatar));
     }
 }
