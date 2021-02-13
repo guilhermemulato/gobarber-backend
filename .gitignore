@@ -2,6 +2,7 @@
 /.vscode
 /coverage
 coverage
+dist
 /tmp/*
 !/tmp/.gitkeep
 .env
